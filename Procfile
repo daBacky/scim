@@ -1,0 +1,1 @@
+web: java -jar target/springboot.camel.demo-1.0-SNAPSHOT.jar
