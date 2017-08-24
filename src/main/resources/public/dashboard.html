@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Admin</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.4.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.2.2/js/dataTables.select.min.js"></script>
+
+    <script type="text/javascript" src="dashboard.js"></script>
+
+</head>
+<body>
+<div class="container-fluid">
+    <nav class="navbar navbar-default" >
+        <div class="navbar-header">
+            <button id="nav.toggle.button" type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbarId">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">SCIM
+            </a>
+        </div>
+        <div id="navbarId" class="navbar-collapse collapse">
+
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Web-Systems <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/admin/system/a/index.html">System A</a></li>
+                        <li><a href="/admin/system/b/index.html">System B </a></li>
+                        <li><a href="/admin/system/c/index.html">System C</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="/admin/dashboard.html">
+                        User Administration
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/system.html" >
+                        System Administration
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/" >
+                        Logout
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</div>
+<br/>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2>User administration</h2>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="content">
+        <!--<button type="button" class="btn btn-primary" id="systems">Systems</button>-->
+        <!--<button type="button" class="btn btn-primary" id="add">Add user</button>-->
+        <!-- Trigger the assNewUserModal with a button -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addUserModal">Add user</button>
+        <!--<button type="button" class="btn btn-primary" id="remove">Remove user</button>-->
+        <!--<button type="button" class="btn btn-primary" id="edit">Edit user</button>-->
+
+        <br/> <br/>
+        <table id="userTable" class="display" cellspacing="0">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Created</th>
+                <th>Active</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+
+    <!-- addNewuserModal -->
+    <div id="addUserModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add new user</h4>
+                </div>
+                <div class="modal-body">
+                    <p>All fields are required.</p>
+                    <div class="col-md-12" style="margin-bottom: 15px;">
+                        <label for="firstname">First Name</label>
+                        <br>
+                        <input style="width: 100%;" type="text" name="firstname" id="firstname" min="0">
+                    </div>
+
+                    <div class="col-md-12" style="margin-bottom: 15px;">
+                        <label for="lastname">Last Name</label>
+                        <br>
+                        <input style="width: 100%;" type="text" name="lastname" id="lastname" min="0" value="">
+                    </div>
+
+                    <div class="col-md-12" style="margin-bottom: 15px;">
+                        <label for="email">Email</label>
+                        <br>
+                        <input style="width: 100%;" type="email" name="email" id="email" min="0" value="">
+                    </div>
+
+                    <div class="col-md-12" style="margin-bottom: 15px;">
+                        <label for="gender">Gender</label>
+                        <br>
+                        <select style="width: 100%;" name="gender" id="gender">
+                            <option value="FEMALE">Female</option>
+                            <option value="MALE">Male</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-12" style="margin-bottom: 15px;">
+                        <label for="role">Role</label>
+                        <br>
+                        <select style="width: 100%;" name="role" id="role">
+                            <option value="USER">User</option>
+                            <option value="ADMIN">Administrator</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-12" style="margin-bottom: 15px;">
+                        <label for="password">Password</label>
+                        <br>
+                        <input style="width: 100%;" type="password" name="password" id="password" min="0" value="">
+                    </div>
+
+                    <div class="col-md-12" style="margin-bottom: 15px;">
+                        <label for="birthday">Birthday</label>
+                        <br>
+                        <input style="width: 100%;" type="date" name="birthday" id="birthday" min="0" value="">
+                    </div>
+
+                    <div class="col-md-12" style="margin-bottom: 15px;">
+                        <label for="active">Active</label>
+                        <br>
+                        <select style="width: 100%;" name="active" id="active" >
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                        </select>
+                    </div>
+                    <br>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="modal-footer">
+
+
+                            <button type="button" class="btn btn-success" data-dismiss="modal" onclick="saveUser()">
+                                Save
+                            </button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="confirmDelete" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Delete User</h4>
+                </div>
+                <div class="modal-body">
+                    <p for="systemName">Are you sure you want to delete this user?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal" id="delete">Yes
+                    </button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

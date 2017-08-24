@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <title>User Admin</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="login.js"></script>
+</head>
+<body>
+<div class="container" style="margin-top: 80px">
+    <div id="errMsg" class="alert col-md-4 col-md-offset-4" style="visibility: hidden"></div>
+    <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-default top">
+            <div class="panel-body">
+                <div class="login-page">
+
+                    <p class="text-center">Bitte melden Sie sich an:</p>
+                    <br>
+
+                    <div class="form">
+                        <label>Email:</label>
+                        <div class="form-group">
+                            <input class="form-control input-group-lg" type="email" placeholder="Email" id="email"/>
+                        </div>
+
+                        <label>Password:</label>
+                        <input class="form-control input-group-lg" type="password" placeholder="Password"
+                               id="password"/>
+                        <br>
+                        <br>
+
+                        <button class="btn btn-primary" style="width: 100%;" onclick="login()">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

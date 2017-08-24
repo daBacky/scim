@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Admin</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="edit-user.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <nav class="navbar navbar-default" >
+        <div class="navbar-header">
+            <button id="nav.toggle.button" type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbarId">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">SCIM
+            </a>
+        </div>
+        <div id="navbarId" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/system/a/index.html" >
+                        System A
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/system/b/index.html" >
+                        System B
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/system/c/index.html" >
+                        System C
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/" >
+                        Logout
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</div>
+<br/>
+<div class="container" style="margin-top: 80px">
+    <!--<div class="header">User Administration - User Details</div>-->
+    <!--<h3 class="text-center" style="margin-left: 130px;">User Administration - User Details:</h3>-->
+    <div class="col-md-4 col-md-offset-4">
+
+        <div class="panel panel-default top">
+            <div class="panel-body">
+                <h3 class="text-center">Your user details:</h3>
+                <div class="login-page">
+
+                    <div class="form">
+                        <div id="successMsg" style="visibility: hidden; color: green"></div>
+                        <div id="errMsg" style="visibility: hidden; color: red"></div>
+                        <br>
+                        <fieldset id="authFieldset">
+                            <label for="firstname">First Name</label>
+                            <input class="form-control input-group-lg" type="text" name="firstname" id="firstname"
+                                   min="0" value="" tabindex="1">
+                            <br>
+                            <label for="lastname">Last Name</label>
+                            <input class="form-control input-group-lg" type="text" name="lastname" id="lastname" min="0"
+                                   value="" tabindex="2">
+                            <br>
+                            <label for="email">Email</label>
+                            <input class="form-control input-group-lg" type="email" name="email" id="email" min="0"
+                                   value="" tabindex="3">
+                            <br>
+                            <label for="password">Password</label>
+                            <input class="form-control input-group-lg" type="password" name="password" id="password"
+                                   min="0" value="" tabindex="4">
+                            <br>
+                            <label for="birthday">Birthday</label>
+                            <input class="form-control input-group-lg" type="date" name="birthday" id="birthday" min="0"
+                                   value="" tabindex="6">
+                            <br>
+                            <label for="gender">Gender</label>
+                            <select class="form-control input-group-lg" name="gender" id="gender" tabindex="5">
+                                <option value="FEMALE">Female</option>
+                                <option value="MALE">Male</option>
+                            </select>
+                        </fieldset>
+
+                        <br>
+                        <br>
+
+                        <button class="btn btn-primary" style="width: 100%;" onclick="saveUser()">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<style>
+    .panel {
+        width: 500px;
+    }
+</style>
+</html>
