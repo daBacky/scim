@@ -70,7 +70,7 @@ CREATE TABLE user_authorization (
 
 
 INSERT INTO user(id, first_name, password, email, created, active, role, last_name, birthday, gender, scim_id, last_modified)
-VALUES ('1', ‘Meng Long’, ‘admin’, ‘meng.chy@students.fhnw.ch’, NULL, '1', NULL, 'Nielsen', '1980-06-28 02:00:00', 'MALE', 'd9a5a77b-be41-47cb-8663-c95830ce173e', NULL);
+VALUES ('1', ‘Meng Long’, 'admin', 'meng.chy@students.fhnw.ch', NULL, '1', NULL, 'Chy', '1980-06-28 02:00:00', 'MALE', 'd9a5a77b-be41-47cb-8663-c95830ce173e', NULL);
 VALUES ('2', 'Kajan', '66', 'kajan.vija@students.fhnw.ch', '2017-07-25 21:39:16', '1', 'USER', 'Vija', '1994-01-01 01:00:00', 'MALE', '8dc4dba3-92af-4ab0-a068-aa1a04bad604', NULL);
 
 
